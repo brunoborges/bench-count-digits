@@ -1,3 +1,6 @@
+///usr/bin/env jbang "$0" "$@" ; exit $?
+//DEPS org.openjdk.jmh:jmh-core:1.33 org.openjdk.jmh:jmh-generator-annprocess:1.33
+
 package com.example;
 
 public class DigitCounter {
