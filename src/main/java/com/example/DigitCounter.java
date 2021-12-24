@@ -15,6 +15,10 @@ public class DigitCounter {
         return (int) Math.log10(number) + 1;
     }
 
+    public int countDigitsByBigDecimalPrecision(long number) {
+        return BigDecimal.valueOf(number).precision();
+    }
+
     public int countDigitsByDivision(long number) {
         int length = 0;
         while (number > 0) {
