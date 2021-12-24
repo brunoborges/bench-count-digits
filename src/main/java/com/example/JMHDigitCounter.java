@@ -89,6 +89,14 @@ public class JMHDigitCounter {
     }
 
     @Benchmark
+    public void countDigitsByBigDecimalPrecision(BenchmarkState state) {
+        var counter = new DigitCounter();
+        for (int i = 0; i < state.digits.length; i++) {
+            counter.countDigitsByBigDecimalPrecision(state.digits[1]);
+        }
+    }
+
+    @Benchmark
     public void countDigitsByWhile(BenchmarkState state) {
         var counter = new DigitCounter();
         for (int i = 0; i < state.digits.length; i++) {
