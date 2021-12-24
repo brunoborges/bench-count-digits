@@ -18,6 +18,11 @@ public class DigitCounterTest {
     }
 
     @Test
+    public void test_countDigitsByBigDecimalPrecision() {
+        testCounter(new DigitCounter()::countDigitsByBigDecimalPrecision);
+    }
+
+    @Test
     public void test_countDigitsByWhile() {
         testCounter(new DigitCounter()::countDigitsByWhile);
     }
