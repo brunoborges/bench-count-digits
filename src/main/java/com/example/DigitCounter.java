@@ -16,7 +16,7 @@ public class DigitCounter {
     }
 
     public int countDigitsByBigDecimalPrecision(long number) {
-        return BigDecimal.valueOf(number).precision();
+        return java.math.BigDecimal.valueOf(number).precision();
     }
 
     public int countDigitsByDivision(long number) {
