@@ -40,13 +40,7 @@ public class JMHDigitCounter {
         }
     }
 
-    @Benchmark
-    public void countDigitsByDivision(BenchmarkState state) {
-        var counter = new DigitCounter();
-        for (int i = 0; i < state.digits.length; i++) {
-            counter.countDigitsByDivision(state.digits[i]);
-        }
-    }
+
 
     @Benchmark
     public void countDigitsByDoWhile(BenchmarkState state) {
