@@ -19,15 +19,6 @@ public class DigitCounter {
         return java.math.BigDecimal.valueOf(number).precision();
     }
 
-    public int countDigitsByDivision(long number) {
-        int length = 0;
-        while (number > 0) {
-            number = number / 10;
-            length++;
-        }
-        return length;
-    }
-
     public int countDigitsByWhile(long number) {
         int length = 0;
         while (number > 0) {
