@@ -13,6 +13,7 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 @Fork(value = 1, warmups = 1)
 @BenchmarkMode({ Mode.AverageTime })
