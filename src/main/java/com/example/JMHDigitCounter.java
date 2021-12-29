@@ -31,13 +31,20 @@ public class JMHDigitCounter {
             }
         }
     }
+    
+    private void executeCounter(Function<Long, Integer> counter, long[] digits) {
+        for (int i = 0; i < digits.length; i++) {
+
+            counter.apply(digits[i]);
+
+        }
+    }
 
     @Benchmark
     public void countDigitsByDivideAndConquer(BenchmarkState state) {
-        var counter = new DigitCounter();
-        for (int i = 0; i < state.digits.length; i++) {
-            counter.countDigitsByDivideAndConquer(state.digits[i]);
-        }
+        executeCounter(new DigitCounter()::countDigitsByDivideAndConquer, state.digits);
+
+
     }
 
 
