@@ -52,10 +52,8 @@ public class DigitCounterTest {
         testCounter(new DigitCounter()::countDigitsByDoWhile);
     }
 
-    @Test
-    public void test_countDigitsByDivision() {
-        testCounter(new DigitCounter()::countDigitsByDivision);
-    }
+
+
 
     @Test
     public void test_countDigitsByDivideAndConquer() {
