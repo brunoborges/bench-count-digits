@@ -13,6 +13,7 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 @Fork(value = 1, warmups = 1)
 @BenchmarkMode({ Mode.AverageTime })
@@ -31,13 +32,20 @@ public class JMHDigitCounter {
             }
         }
     }
+    
+    private void executeCounter(Function<Long, Integer> counter, long[] digits) {
+        for (int i = 0; i < digits.length; i++) {
+
+            counter.apply(digits[i]);
+
+        }
+    }
 
     @Benchmark
     public void countDigitsByDivideAndConquer(BenchmarkState state) {
-        var counter = new DigitCounter();
-        for (int i = 0; i < state.digits.length; i++) {
-            counter.countDigitsByDivideAndConquer(state.digits[i]);
-        }
+        executeCounter(new DigitCounter()::countDigitsByDivideAndConquer, state.digits);
+
+
     }
 
 
